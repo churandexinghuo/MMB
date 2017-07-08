@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 视口 -->
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!-- css文件的引入 -->
+    <link rel="stylesheet" type="text/css" href="./css/base.css">
+    <link rel="stylesheet" type="text/css" href="./libs/bootstrap/css/bootstrap.css">
+    <!-- less文件 -->
+    <link rel="stylesheet/less" type="text/css" href="./css/common_section.less">
+    <link rel="stylesheet/less" type="text/css" href="./css/brand_product_details.less">
+    <!-- less解析文件的引入 -->
+    <script type="text/javascript" src="./libs/less/less.js"></script>
+    <!-- 模板引擎的引入 -->
+    <script type="text/html" id="brands-template">
+        {{each result as value i}}
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <a class="brand-item" href="#">
+                    <i class="rank">{{i}}</i>
+                    <div class="brandName">{{value.brandName}}</div>
+                    <div class="brandInfo">{{value.brandInfo}}</div>
+                </a>
+            </div>
+        </div>
+        {{/each}}
+    </script>
+    <script type="text/html" id="products-template">
+        {{each result as value i}}
+            <div class="media">
+                <div class="media-left">
+                    <a href="#" data-product-id="{{value.productId}}">
+                        {{#value.productImg}}
+                    </a>
+                </div>
+                <div class="media-body">
+                    <h5 class="normal-info">
+                        <span class="product-name"
+                        id="com_pd_name_{{value.productId}}">{{value.productName}}</span>
+                        <p class="product-price">{{value.productPrice}}</p>
+                    </h5>
+                    <p class="other-info">
+                        <span class="from-time">{{value.productQuote}}</span>
+                        <span class="comment">{{value.productCom}}</span>
+                    </p>
+                </div>
+            </div>
+        {{/each}}
+    </script>
+    <script type="text/html" id="comments-template">
+        {{each result as value i}}
+            <div class="comment-item">
+                <p><span class="comName">{{value.comName}}</span><span class="comTime">{{value.comTime}}</span></p>
+                <p class="comContent">{{value.comContent}}</p>
+            </div>
+        {{/each}}
+    </script>
+    <title>慢慢买十大品牌</title>
+</head>
+
+<body>
+    <!-- 头部 -->
+    <header id="header">
+    </header>
+    <!-- 搜索 -->
+    <section id="search">
+    </section>
+    <!-- 菜单栏 -->
+    <section id="menu">
+        <div class="nav">
+            <ol class="breadcrumb">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="brandTitle.html">品牌大全</a></li>
+                <li></li>
+            </ol>
+        </div>
+        <div class="description"></div>
+        <div class="panel-group" id="accordion">
+            <!-- <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="brand-item">
+                        <i class="rank">1</i>
+                        <div class="brandName"></div>
+                        <div class="brandName"></div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+        <div id="selledRank">
+            <div class="description"></div>
+        </div>
+        <div id="latelyComments">
+            <div class="description"></div>
+            <div class="product"></div>
+            <div class="comments"></div>
+        </div>
+    </section>
+    <!-- 底部 -->
+    <footer id="footer"></footer>
+</body>
+<!-- 引入的js库 -->
+<script type="text/javascript" src="./libs/jquery/jquery.js"></script>
+<script type="text/javascript" src="./libs/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript" src="./libs/template/template.js"></script>
+<!-- 添加的js文件 -->
+<script type="text/javascript" src="./js/common_section.js"></script>
+<script type="text/javascript" src="./js/brand_product_details.js"></script>
+
+</html>

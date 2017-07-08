@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 视口 -->
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!-- css文件的引入 -->
+    <link rel="stylesheet" type="text/css" href="./css/base.css">
+    <link rel="stylesheet" type="text/css" href="./libs/bootstrap/css/bootstrap.css">
+    <!-- less文件 -->
+    <link rel="stylesheet/less" type="text/css" href="./css/common_section.less">
+    <link rel="stylesheet/less" type="text/css" href="./css/category.less">
+    <!-- less解析文件的引入 -->
+    <script type="text/javascript" src="./libs/less/less.js"></script>
+    <script type="text/html" id="categoryTitle-template">
+        {{each result as value i}}
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="heading{{i}}">
+                    <h4 class="panel-title">
+                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{i}}" aria-expanded="true" aria-controls="collapse{{i}}" data-title-id="{{value.titleId}}">
+                            {{value.title}}
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapse{{i}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{i}}">
+                    <div class="panel-body">
+                        <div class="row" id="getCategory-{{value.titleId}}"></div>
+                    </div>
+                </div>
+            </div>
+        {{/each}}
+    </script>
+    <script type="text/html" id="categories-template">
+        {{each result as value i}}
+            <div class="col-xs-4">
+                <a href="products_list.html?categoryid={{value.categoryId}}">
+                    {{value.category}}
+                </a>
+            </div>
+        {{/each}}
+    </script>
+    <title>慢慢买商品比价</title>
+</head>
+
+<body>
+    <!-- 头部 -->
+    <header id="header">
+       
+    </header>
+    <!-- 搜索 -->
+    <section id="search">
+    </section>
+    <!-- 菜单栏 -->
+    <section id="menu">
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+        </div>
+    </section>
+    <!-- 底部 -->
+    <footer id="footer"></footer>
+</body>
+<!-- 引入的js库 -->
+<script type="text/javascript" src="./libs/jquery/jquery.js"></script>
+<script type="text/javascript" src="./libs/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript" src="./libs/template/template.js"></script>
+<!-- 添加的js文件 -->
+<script type="text/javascript" src="./js/common_section.js"></script>
+<script type="text/javascript" src="./js/category.js"></script>
+</html>

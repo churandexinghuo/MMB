@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 视口 -->
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!-- css文件的引入 -->
+    <link rel="stylesheet" type="text/css" href="./css/base.css">
+    <link rel="stylesheet" type="text/css" href="./libs/bootstrap/css/bootstrap.css">
+    <!-- less文件 -->
+    <link rel="stylesheet/less" type="text/css" href="./css/common_section.less">
+    <link rel="stylesheet/less" type="text/css" href="./css/baicaijia.less">
+    <!-- less解析文件的引入 -->
+    <script type="text/javascript" src="./libs/less/less.js"></script>
+    <!-- 模板引擎的引入 -->
+    <script type="text/html" id="products-title-template">
+        {{each result as value i}}
+            <li><a href="#" data-title-id="{{value.titleId}}">{{value.title}}</a></li>
+        {{/each}}
+    </script>
+    <script type="text/html" id="products-template">
+        {{each result as value i}}
+        <div class="media">
+            <div class="media-left">
+                <a href="#"><!-- ***.html?productid={{value.productId}} -->
+                        {{#value.productImg}}
+                    </a>
+            </div>
+            <div class="media-body">
+                <h5 class="normal-info">
+                        <p class="product-name">{{#value.productName}}</p>
+                        <p class="product-price">{{#value.productPrice}}</p>
+                    </h5>
+                <p class="other-info">
+                    <span class="coupon">{{#value.productCoupon}}</span>
+                    <span class="order">{{#value.productHref}}</span>
+                </p>
+                <div class="remained">{{#value.productCouponRemain}}</div>
+            </div>
+        </div>
+        {{/each}}
+    </script>
+    <title>白菜价-淘宝内部券</title>
+</head>
+
+<body>
+    <!-- 头部 -->
+    <header id="header" class="back"></header>
+    <!-- 商品列表 -->
+    <section id="products">
+        <div class="products-title">
+            <ul>
+           <!-- <li><a href="#" class="active">全部</a></li> -->
+            </ul>
+        </div>
+        <div class="products-list">
+           
+        </div>
+    </section>
+    <!-- 底部 -->
+    <footer id="footer"></footer>
+</body>
+<!-- 引入的js库 -->
+<script type="text/javascript" src="./libs/jquery/jquery.js"></script>
+<script type="text/javascript" src="./libs/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript" src="./libs/template/template.js"></script>
+<!-- 添加的js文件 -->
+<script type="text/javascript" src="./js/common_section.js"></script>
+<script type="text/javascript" src="./js/baicaijia.js"></script>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 视口 -->
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!-- css文件的引入 -->
+    <link rel="stylesheet" type="text/css" href="./css/base.css">
+    <link rel="stylesheet" type="text/css" href="./libs/bootstrap/css/bootstrap.css">
+    <!-- less文件 -->
+    <link rel="stylesheet/less" type="text/css" href="./css/common_section.less">
+    <link rel="stylesheet/less" type="text/css" href="./css/category_product_detials.less">
+    <!-- less解析文件的引入 -->
+    <script type="text/javascript" src="./libs/less/less.js"></script>
+    <!-- 模板引擎的引入 -->
+    <script type="text/html" id="estimate-list">
+        {{each result as value i}}
+            <div class="estimate-item">
+                <p class="user-time"><span>{{value.comName}}</span><span>{{value.comTime}}</span></p>
+                <p class="buy-from">{{value.comFrom}}</p>
+                <p class="estimate-details">{{value.comContent}}</p>
+                <a href="#" class="estimate-reply">回复</a>
+            </div>
+        {{/each}}
+    </script>
+    <title>慢慢买商品详情</title>
+</head>
+
+<body>
+    <!-- 头部 -->
+    <header id="header">
+    </header>
+    <!-- 搜索 -->
+    <section id="search"></section>
+    <!-- 商品列表 -->
+    <section id="product">
+        <div class="nav">
+            <ol class="breadcrumb">
+                <li><a href="index.html">首页</a></li>
+            </ol>
+        </div>
+        <div class="product-details">
+            <a href="#" class="collect"><img src="./images/sc.jpg"></a>
+            <div class="product-pic"></div>
+            <div class="product-name"></div>
+        </div>
+        <div class="compare">
+            <div class="compare-title">比价购买</div>
+            <div class="compare-list"></div>
+            <div class="compare-tips">*实际价格以个网站列出的实时售价为准，我们提供的价格可能有数小时至数日的延迟。</div>
+        </div>
+        <div class="estimate">
+            <div class="estimate-title">优选网友评价</div>
+            <div class="estimate-content">
+               <!--  <div class="estimate-item">
+                   <p class="user-time"><span>n</span><span>t</span></p>
+                   <p class="buy-from">购买自：京东</p>
+                   <p class="estimate-details">*实际价格以个网站列出的实时售价为准，我们提供的价格可能有数小时至数日的延迟。</p>
+                   <a href="#" class="estimate-reply">回复</a>
+               </div> -->
+            </div>
+            <div class="estimate-more"><a href="#">查看更多评价</a></div>
+        </div>
+    </section>
+    <!-- 底部 -->
+    <footer id="footer"></footer>
+</body>
+<!-- 引入的js库 -->
+<script type="text/javascript" src="./libs/jquery/jquery.js"></script>
+<script type="text/javascript" src="./libs/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript" src="./libs/template/template.js"></script>
+<!-- 添加的js文件 -->
+<script type="text/javascript" src="./js/common_section.js"></script>
+<script type="text/javascript" src="./js/category_product_detials.js"></script>
+
+</html>

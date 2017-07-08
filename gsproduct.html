@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 视口 -->
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!-- css文件的引入 -->
+    <link rel="stylesheet" type="text/css" href="./css/base.css">
+    <link rel="stylesheet" type="text/css" href="./libs/bootstrap/css/bootstrap.css">
+    <!-- less文件 -->
+    <link rel="stylesheet/less" type="text/css" href="./css/common_section.less">
+    <link rel="stylesheet/less" type="text/css" href="./css/gs_product.less">
+    <!-- less解析文件的引入 -->
+    <script type="text/javascript" src="./libs/less/less.js"></script>
+    <!-- 模板引擎的引入 -->
+    <script type="text/html" id="shop-list-template">
+        {{each result as value i}}
+            {{if i==0}}
+                <li class="active" data-shop-id="{{value.shopId}}">{{value.shopName}}</li>
+                {{else}}
+                <li data-shop-id="{{value.shopId}}">{{value.shopName}}</li>
+            {{/if}}     
+        {{/each}}
+    </script>
+    <script type="text/html" id="area-list-template">
+         {{each result as value i}}
+            {{if i==0}}
+                <li class="active" data-area-id="{{value.areaId}}">{{value.areaName}}</li>
+                {{else}}
+                <li data-area-id="{{value.areaId}}">{{value.areaName}}</li>
+            {{/if}}     
+        {{/each}}
+    </script>
+    <script type="text/html" id="products-template">
+        {{each result as value i}}
+            <div class="product-item">
+                <div class="product-pic">
+                    <img src="{{#value.productImg}}"> 
+                </div>
+                <p class="product-name">{{value.productName}}</p>
+                <p class="product-price">{{value.productPrice}}</p>
+            </div>
+        {{/each}}
+    </script>
+    <title>凑单品</title>
+</head>
+
+<body>
+    <!-- 头部 -->
+    <header id="header" class="back">
+    </header>
+    <!-- 商品列表 -->
+    <section id="products">
+        <div class="from-area">
+            <div class="title">
+                <a href="#" class="from">商家</a>
+                <a href="#" class="area">地区</a>
+            </div>
+            <div class="from-content">
+                <ul></ul>
+            </div>
+            <div class="area-content">
+                <ul></ul>
+            </div>
+        </div>
+        <div class="products-list"></div>
+    </section>
+    <!-- 底部 -->
+    <footer id="footer"></footer>
+</body>
+<!-- 引入的js库 -->
+<script type="text/javascript" src="./libs/jquery/jquery.js"></script>
+<script type="text/javascript" src="./libs/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript" src="./libs/template/template.js"></script>
+<!-- 添加的js文件 -->
+<script type="text/javascript" src="./js/common_section.js"></script>
+<script type="text/javascript" src="./js/gs_product.js"></script>
+
+</html>

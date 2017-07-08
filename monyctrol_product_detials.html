@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 视口 -->
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!-- css文件的引入 -->
+    <link rel="stylesheet" type="text/css" href="./css/base.css">
+    <link rel="stylesheet" type="text/css" href="./libs/bootstrap/css/bootstrap.css">
+    <!-- less文件 -->
+    <link rel="stylesheet/less" type="text/css" href="./css/common_section.less">
+    <link rel="stylesheet/less" type="text/css" href="./css/monyctrol_product_detials.less">
+    <!-- less解析文件的引入 -->
+    <script type="text/javascript" src="./libs/less/less.js"></script>
+    <!-- 模板引擎的引入 -->
+    <script type="text/html" id="moneyctrl-product-details">
+        {{each result as value}}
+        <div class="product-name"> {{value.productName}} </div>
+        <div class="product-price"> {{value.productPinkage}} </div>
+        <div class="product-msg"><span>{{value.productFrom}}</span> <span>{{value.productTime}}</span> <span>{{value.productTips}}</span></div>
+        <div class="media">
+            <div class="media-body">
+                {{#value.productImgSm}}
+                <p class="normal-info">
+                    {{value.productInfo2}}
+                </p>
+            </div>
+        </div>
+        <div class="product-img">
+            {{#value.productImgSm}}
+        </div>
+        {{/each}}
+    </script>
+    <title>国内折扣商品详情</title>
+</head>
+
+<body>
+    <!-- 头部 -->
+    <header id="header" class="back">
+    </header>
+    <!-- 省钱控商品详情 -->
+    <section id="product">
+        <div class="product-details">
+            <!-- <div class="product-name">  </div>
+            <div class="product-price">  </div>
+            <div class="product-msg"><span>京东</span> <span>7-5</span> <span>19:44</span> <span>chen/慢慢买</span></div>
+            <div class="media">
+                <div class="media-body">
+                    <p class="normal-info">
+                        {{value.productComCount}}
+                    </p>
+                    {{#value.productImg2}}
+                </div>  
+            </div>
+            <div class="product-img">   
+                {{#value.productImg2}}
+            </div> -->
+        </div>
+        <div class="product-buy"><a href="#" id="btn-buy">前往购买</a></div>
+        <div class="mmb-link"><img src="./images/mmbweixin2.png"></div>
+        <div class="comment">
+            <!-- <p>发表评论</p>
+            <div>
+                <textarea rows="8"></textarea>
+                <input type="button" value="发表评论">
+            </div>
+            <p>最新评论</p> -->
+        </div>
+    </section>
+    <!-- 底部 -->
+    <footer id="footer"></footer>
+</body>
+<!-- 引入的js库 -->
+<script type="text/javascript" src="./libs/jquery/jquery.js"></script>
+<script type="text/javascript" src="./libs/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript" src="./libs/template/template.js"></script>
+<!-- 添加的js文件 -->
+<script type="text/javascript" src="./js/common_section.js"></script>
+<script type="text/javascript" src="./js/monyctrol_product_detials.js"></script>
+
+</html>

@@ -1,0 +1,66 @@
+@import url(set-color.less);
+
+#menu{
+    background-color: #fff;
+    >.nav{
+        >.breadcrumb{
+            margin: 0;
+            background-color: #f9f9f9;
+            border-bottom: 1px solid @boder-color;
+            white-space: nowrap;
+            overflow: hidden;
+            font-size: 14px;
+            color: #333;
+            >li:first-of-type~li::before{
+                content: ">";
+            }
+            a{
+                color: #5a5a5a;
+            }
+        }
+    }
+    .description{
+        padding: 10px;
+        color: #974604;
+        background-color: #eee;
+        border: 1px solid #bbb;
+        margin: 10px 5px;
+    }
+    >.panel-group{
+        overflow: hidden;
+        margin: 0;
+        >.panel {
+            margin: 0 10px;
+            border: 0;
+            border-bottom: 1px solid #bbb;
+            >.panel-heading{
+                background-color: #fff;
+                >.panel-title{
+                    >a{
+                        width: 100%;
+                        display: block;
+                        position: relative;
+                        color: #000;
+                        font-size: 14px;
+                        font-weight: 600;
+                    }
+                    >a::before{
+                        content: "";
+                        position: absolute;
+                        right: 0px;
+                        top: 50%;
+                        transform:translateY(-50%);
+                        width: 10px;
+                        height: 15px;
+                        background-image: url(../images/right.png);
+                        background-size: 10px 15px;
+                        background-repeat: no-repeat;
+                    }
+                } 
+            }
+        }
+    }
+   
+}
+
+

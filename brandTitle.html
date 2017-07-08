@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 视口 -->
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!-- css文件的引入 -->
+    <link rel="stylesheet" type="text/css" href="./css/base.css">
+    <link rel="stylesheet" type="text/css" href="./libs/bootstrap/css/bootstrap.css">
+    <!-- less文件 -->
+    <link rel="stylesheet/less" type="text/css" href="./css/common_section.less">
+    <link rel="stylesheet/less" type="text/css" href="./css/brandTitle.less">
+    <!-- less解析文件的引入 -->
+    <script type="text/javascript" src="./libs/less/less.js"></script>
+    <script type="text/html" id="brand-title-template">
+        {{each result as value i}}
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                        <a href="brand_product_details.html?brandtitleid={{value.brandTitleId}}">
+                            {{value.brandTitle}}
+                        </a>
+                    </h4>
+            </div>
+        </div>
+        {{/each}}
+    </script>
+   
+    <title>慢慢买品牌大全</title>
+</head>
+
+<body>
+    <!-- 头部 -->
+    <header id="header">
+    </header>
+    <!-- 搜索 -->
+    <section id="search">
+    </section>
+    <!-- 菜单栏 -->
+    <section id="menu">
+        <div class="nav">
+            <ol class="breadcrumb">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="brandTitle.html">品牌大全</a></li>
+                <li></li>
+            </ol>
+        </div>
+        <div class="description">热门品牌排行</div>
+        <div class="panel-group" id="accordion">
+            
+        </div>
+    </section>
+    <!-- 底部 -->
+    <footer id="footer"></footer>
+</body>
+<!-- 引入的js库 -->
+<script type="text/javascript" src="./libs/jquery/jquery.js"></script>
+<script type="text/javascript" src="./libs/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript" src="./libs/template/template.js"></script>
+<!-- 添加的js文件 -->
+<script type="text/javascript" src="./js/common_section.js"></script>
+<script type="text/javascript" src="./js/brandTitle.js"></script>
+
+</html>

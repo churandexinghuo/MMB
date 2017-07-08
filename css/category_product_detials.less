@@ -1,0 +1,132 @@
+@import url(set-color.less);
+#product{
+	>.nav{
+		>.breadcrumb{
+			margin: 0;
+			background-color: #f9f9f9;
+			border-bottom: 1px solid @boder-color;
+			white-space: nowrap;
+			overflow: hidden;
+			>li:first-of-type~li::before{
+				content: ">";
+			}
+			a{
+				color: #5a5a5a;
+			}
+		}
+	}
+	>.product-details{
+		text-align: center;
+		position: relative;
+		>.collect{
+			position: absolute;
+			right: 20px;
+			top: 10px;
+
+			>img{
+				width: 40px;
+				height: 40px;
+			}
+		}
+		>.product-pic{
+			padding: 10px;
+			>img{
+				width: 160px;
+				height: 160px;
+			}
+		}
+		>.product-name{
+			padding: 10px;
+			text-align: left;
+		}
+	}
+	>.compare{
+		background-color: #F2F2F2;
+		padding-top: 19px;
+		padding-bottom: 5px;
+		border-bottom: 3px solid #7a7a7a;
+		>.compare-title{
+			height: 35px;
+			background-color: #FF9D1F;
+			color: white;
+			text-align: center;
+			line-height: 35px;
+			border-top: 1px solid #C45810;
+			border-bottom: 1px solid #C45810;
+			position: relative;
+		}
+		>.compare-title::before{
+			content: "";
+			width: 12px;
+			height: 5px;
+			background-image: url(../images/tab_ar.png);
+			background-size: 12px 5px;
+			background-repeat: no-repeat;
+			position: absolute;
+			left: 50%;
+			transform:translateX(-50%);
+			bottom: -4px;
+		}
+		>.compare-list{
+			padding: 20px 10px;
+			background-color: #fff;
+
+		}
+		>.compare-tips{
+			background-color: #fff;
+			padding: 10px;
+			color: #888888;
+			font-size: 12px;
+		}
+	}
+	>.estimate{
+		>.estimate-title{
+			height: 35px;
+			line-height: 35px;
+			background-color: #dbdbdb;
+			text-align: center;
+		}
+		>.estimate-content{
+			>.estimate-item{
+				padding:10px;
+				font-size: 12px;
+				>.user-time{
+					color: #666695;
+					overflow: hidden;
+					>span:first-of-type{
+						float: left;
+					}
+					>span:last-of-type{
+						float: right;
+					}
+				}
+				>.buy-from{
+					color: #7C7C7C;
+				}
+				>.estimate-details{
+					font-size: 14px;
+				}
+				>.estimate-reply{
+					color: #666695;
+				}
+			}
+			
+			>div:nth-of-type(3)~div{
+				display: none;
+			}
+		}
+		>.estimate-more{
+			padding: 15px 10px;
+			background-color: #F2F2F2;
+			>a{
+				background-color: #e6e6e6;
+				display: block;
+				height: 30px;
+				line-height: 30px;
+				text-align: center;
+				border-radius: 5px;
+				color: #5a5a5a;
+			}
+		}
+	}
+}
